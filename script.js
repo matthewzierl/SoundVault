@@ -122,12 +122,6 @@ playBtn.addEventListener('click', () => {
     }
 })
 
-// TODO: DON'T KNOW IF THIS WORKS
-window.addEventListener('scroll', () => {
-    var scrollPosition = window.pageYOffset || window.scrollY;
-    musicContainer.style.top = scrollPosition + 'px';
-  });
-
 // Change song Events
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
