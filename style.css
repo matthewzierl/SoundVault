@@ -9,11 +9,13 @@ body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     background-image: linear-gradient(0deg, rgb(247, 247, 247, 1), 23.8%, rgb(82, 14, 14), 92%);
-    display: flex;
 }
 
 .music-container {
     background-color: rgb(240, 240, 240);
+    left: auto;
+    right: auto;
+    width:max-content;
     border-radius: 45px;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.6);
     display: flex;
