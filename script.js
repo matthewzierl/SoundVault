@@ -50,6 +50,14 @@ function songIsPlaying() {
 }
 
 function prevSong() {
+
+    // For repeating songs
+    if (repeatSongPressed) {
+        loadSong(songs[songIndex]);
+        playSong();
+        return;
+    }
+
     prevSongPressed = true;
     songIndex--
 
@@ -58,14 +66,19 @@ function prevSong() {
     }
 
     loadSong(songs[songIndex])
-
-    if (songIsPlaying) {
-        playSong()
-    }
+    playSong()
 
 }
 
 function nextSong() {
+
+    // For repeating songs
+    if (repeatSongPressed) {
+        loadSong(songs[songIndex]);
+        playSong();
+        return;
+    }
+
     songIndex++
 
     if (songIndex >= songs.length) {
@@ -73,10 +86,8 @@ function nextSong() {
     }
 
     loadSong(songs[songIndex])
+    playSong()
 
-    if (songIsPlaying) {
-        playSong()
-    }
 }
 
 function updateProgress(e) {
@@ -86,7 +97,7 @@ function updateProgress(e) {
 
     if (currentTime == duration) {
         if (repeatSongPressed == true) {
-            loadSong(songs[songIndex]);
+            playSong();
         }
         nextSong()
     }
@@ -104,7 +115,7 @@ function setProgress(e) {
 function repeatSong() {
     if (repeatBtn.style.color == "red") {
         repeatSongPressed = false;
-        repeatBtn.style.color = "rgb(223, 219, 223)";
+        repeatBtn.style.color = "black";
     } else {
         repeatSongPressed = true;
         repeatBtn.style.color = "red";
