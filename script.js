@@ -35,6 +35,7 @@ function playSong() {
     playBtn.querySelector('i.fas').classList.add('fa-pause')
 
     audio.play()
+    
 }
 
 function pauseSong() {
